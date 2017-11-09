@@ -1,6 +1,9 @@
 package com.ucbcba.proyecto.proyecto.Entities;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Set;
@@ -30,6 +33,9 @@ public class Empresa {
 
     @OneToMany(mappedBy = "empresa")
     private Set<Option> Options;
+
+    @Range(min = 0, max = 5, message = "debe ser entre 1 y 5")
+    private Integer Calificacion;
 
     public Set<Option> getOptions() {
         return Options;
@@ -79,4 +85,11 @@ public class Empresa {
         this.telefono = telefono;
     }
 
+    public Integer getCalificacion() {
+        return Calificacion;
+    }
+
+    public void setCalificacion(Integer calificacion) {
+        Calificacion = calificacion;
+    }
 }

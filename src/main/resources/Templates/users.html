@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <title>Users</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #FFE4B5;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #FFE4B5;
+        }
+    </style>
+</head>
+<body style="background-color:#FDF5E6;">
+<div class="container">
+    <div th:if="${not #lists.isEmpty(users)}">
+        <table class="table table-striped">
+            <caption><h1>Lista de Usuarios registrados</h1></caption>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Nombre</th>
+                <th>Ciudad</th>
+                <th>Roles</th>
+            </tr>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.id}">Id</td>
+                <td th:text="${user.email}">Email</td>
+                <td th:text="${user.name}">Nombre</td>
+                <td th:text="${user.city}">City</td>
+                <td th:text="${user.roles}">Roles</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

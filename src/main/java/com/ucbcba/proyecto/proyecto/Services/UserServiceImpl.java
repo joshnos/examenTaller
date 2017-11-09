@@ -1,6 +1,7 @@
 package com.ucbcba.proyecto.proyecto.Services;
 
 import com.ucbcba.proyecto.proyecto.Entities.User;
+import com.ucbcba.proyecto.proyecto.Repositories.CityRepository;
 import com.ucbcba.proyecto.proyecto.Repositories.RoleRepository;
 import com.ucbcba.proyecto.proyecto.Repositories.UserRepository;
 import com.ucbcba.proyecto.proyecto.Services.UserService;
@@ -18,6 +19,8 @@ public class UserServiceImpl implements UserService {
     private RoleRepository roleRepository;
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Autowired
+    private CityRepository cityRepository;
 
 
 
