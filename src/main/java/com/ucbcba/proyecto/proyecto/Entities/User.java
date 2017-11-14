@@ -73,7 +73,7 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
-    
+
     @ManyToOne
     @JoinColumn(name = "city_id")
     public City getCity() {

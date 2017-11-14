@@ -4,7 +4,9 @@ import com.ucbcba.proyecto.proyecto.Entities.City;
 import com.ucbcba.proyecto.proyecto.Repositories.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CityServiceImpl implements CityService {
 
     private CityRepository cityRepository;

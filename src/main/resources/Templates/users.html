@@ -37,9 +37,11 @@
                 <td th:text="${user.email}">Email</td>
                 <td th:text="${user.name}">Nombre</td>
                 <td th:text="${user.city}">City</td>
-                <td th:text="${user.roles}">Roles</td>
             </tr>
         </table>
+        <div th:each="role : ${user.roles}">
+            <b>Role:</b><p th:text="${role.name}"></p>
+        </div>
     </div>
 </div>
 </body>

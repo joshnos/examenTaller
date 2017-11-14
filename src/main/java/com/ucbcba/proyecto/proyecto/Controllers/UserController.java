@@ -36,6 +36,7 @@ public class UserController {
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registrationInit(Model model) {
         model.addAttribute("user", new User());
+        model.addAttribute("citys",cityService.listAllCitys());
         return "registration";
     }
 
